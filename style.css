@@ -1,0 +1,259 @@
+body {
+    /* height: 100vh; */
+    justify-content: center;
+    align-items: center;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+.intro-header{
+    color: brown;
+    font-size: 2rem;
+}
+
+/* h3 {
+    font-size: 3rem;
+    background-color: beige;
+    border: 1px solid black;
+}
+
+h3::before{
+    content:'hello';
+    background-color: red;
+    display: block;
+    font-size: 2rem;
+    font-weight: 900;
+}
+
+h3::after {
+    content: 'ssuupp!';
+    background-color: aquamarine;
+    display: flex;
+    font-size: 2rem;
+} */
+
+blockquote{
+    font-size: 2rem;
+}
+
+blockquote::before {
+    content: open-quote;
+    font-size: 3rem;
+    color: #DDD;
+}
+
+blockquote::after {
+    content: close-quote;
+    font-size: 3rem;
+    color: #DDD;
+}
+
+
+a[data-tool-tip] {
+    position: relative;
+}
+
+a[data-tool-tip]::after {
+    content: attr(data-tool-tip );
+    background-color: #eee;
+    padding: 0.5rem;
+    display: block;
+    position: absolute;
+    border-radius: 10px;
+    bottom:0;
+    left:0;
+    white-space: nowrap; 
+    transform: scale(0);
+    transition: 
+        transform ease-in-out 100ms,
+        bottom ease-out 100ms;
+}
+
+a[data-tool-tip]:hover::after {
+    transform: scale(1);
+    bottom: 100%;
+}
+
+.sections {
+    width: 80%;
+    margin-top: 3rem;
+    align-items: center;
+    margin: auto;
+    counter-reset: counter;
+}
+
+.section {
+    position: relative;
+    margin-bottom: 1em;
+    background-color: #eee;
+    padding: 0.5rem;
+}
+
+.section::before {
+    counter-increment: counter;
+    content: counter(counter);
+    position: absolute;
+    left: -3rem;
+    top:40%;
+    background-color: salmon;
+    width: 2em;
+    height: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid black;
+    transition: all ease-in 100ms;
+}
+
+.section::after {
+    content: ' ';
+    background-color: grey;
+    height:100%;
+    width: 0.1rem;
+    position: absolute;
+    left: -2rem;
+    top:0;
+    bottom: 0;
+    opacity: 0;
+    transform: scale(0);
+    transition: all ease-out 1s;
+}
+
+
+.section:hover::before {
+    transform: translateY(-10%);
+    background-color: rgb(238, 161, 153);
+    
+}
+
+.section:hover::after {
+    transform: scale(1);
+    top:68%;
+    opacity: 1;
+}
+
+.sections-two {
+    background-color: rgb(34, 28, 34);
+    padding: 1rem;
+    text-align: center ;
+    width: 100vw;
+    max-width: 100%;
+}
+
+.intro {
+    position: relative;
+    z-index: 0;
+    display: inline-block;
+    color: rgb(192, 188, 218);
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.intro::before,
+.intro::after
+{
+    content: '';
+    height: 100%;
+    display: block;
+    position: absolute;
+    
+}
+
+.intro::before {
+    background-color: rgb(34, 28, 34);
+    /* width: 100%; */
+    z-index: -1;
+    left: -10px;
+    right: -10px;
+}
+
+.intro::after {
+    background-color: rgb(198, 214, 172);
+    width:95vw;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -2;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    position: relative;
+    margin: 1em;
+
+}
+
+.card::before,
+.card::after {
+    content: ' ';
+    position: absolute;
+    top:10px;
+    bottom: 10px;
+    left: 10px;
+    right:10px;
+}
+
+.card::before {
+    border-top: 1px solid rgb(255, 244, 248);
+    border-bottom: 1px solid rgb(255, 244, 248);
+    transform: scale(0,1);
+    transition: all ease-out 250ms;
+    /* background-color: aquamarine; */
+}
+
+.card::after {
+    border-left: 1px solid rgb(255, 244, 248);
+    border-right: 1px solid rgb(255, 244, 248);
+    transform: scale(1,0);
+    /* background-color: #eee; */
+    transition: all ease-out 250ms;
+}
+
+.card__img {
+    max-width: 100%;
+    display: block;
+    transition: opacity ease-out 250ms;
+    opacity: 1;
+    border-radius:15px;
+}
+
+
+
+.card__body {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: #fff;
+    opacity: 0;
+    transition: opacity ease-out 250ms;
+}
+
+.card:hover .card__body {
+    opacity: 1;
+}
+
+.card:hover .card__img {
+    opacity: 0.4;
+}
+
+.card:hover::before {
+    transform: scale(1.05,1);
+}
+
+.card:hover::after {
+    transform: scale(1,1.05);
+}
+
+
+
+
+
