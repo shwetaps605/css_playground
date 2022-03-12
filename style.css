@@ -261,6 +261,14 @@ a[data-tool-tip]:hover::after {
     place-content: center;
 }
 
+.hamburger-two {
+    margin-top: 1em;
+    background-color: rgb(21, 22, 85);
+    min-height: 200px;
+    display: grid;
+    place-content: center;
+}
+
 .nav-icon {
     width: 3rem;
     /* margin: 1rem; */
