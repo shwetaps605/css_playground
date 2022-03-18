@@ -1,5 +1,4 @@
 body {
-    /* height: 100vh; */
     justify-content: center;
     align-items: center;
 }
@@ -13,26 +12,6 @@ body {
     font-size: 2rem;
 }
 
-/* h3 {
-    font-size: 3rem;
-    background-color: beige;
-    border: 1px solid black;
-}
-
-h3::before{
-    content:'hello';
-    background-color: red;
-    display: block;
-    font-size: 2rem;
-    font-weight: 900;
-}
-
-h3::after {
-    content: 'ssuupp!';
-    background-color: aquamarine;
-    display: flex;
-    font-size: 2rem;
-} */
 
 blockquote{
     font-size: 2rem;
@@ -125,8 +104,7 @@ a[data-tool-tip]:hover::after {
 
 .section:hover::before {
     transform: translateY(-10%);
-    background-color: rgb(238, 161, 153);
-    
+    background-color: rgb(238, 161, 153); 
 }
 
 .section:hover::after {
@@ -152,18 +130,15 @@ a[data-tool-tip]:hover::after {
 }
 
 .intro::before,
-.intro::after
-{
+.intro::after {
     content: '';
     height: 100%;
     display: block;
-    position: absolute;
-    
+    position: absolute;   
 }
 
 .intro::before {
     background-color: rgb(34, 28, 34);
-    /* width: 100%; */
     z-index: -1;
     left: -10px;
     right: -10px;
@@ -188,7 +163,6 @@ a[data-tool-tip]:hover::after {
 .card {
     position: relative;
     margin: 1em;
-
 }
 
 .card::before,
@@ -206,14 +180,12 @@ a[data-tool-tip]:hover::after {
     border-bottom: 1px solid rgb(255, 244, 248);
     transform: scale(0,1);
     transition: all ease-out 250ms;
-    /* background-color: aquamarine; */
 }
 
 .card::after {
     border-left: 1px solid rgb(255, 244, 248);
     border-right: 1px solid rgb(255, 244, 248);
     transform: scale(1,0);
-    /* background-color: #eee; */
     transition: all ease-out 250ms;
 }
 
@@ -224,8 +196,6 @@ a[data-tool-tip]:hover::after {
     opacity: 1;
     border-radius:15px;
 }
-
-
 
 .card__body {
     position: absolute;
@@ -271,41 +241,7 @@ a[data-tool-tip]:hover::after {
 
 .nav-icon {
     width: 3rem;
-    /* margin: 1rem; */
-    /* margin: auto; */
-    /* position: relative; */
-    /* transition: all ease-in 3s ; */
 }
-
-/* .nav-icon div {
-    width: 2rem;
-    background-color: black;
-    height: 0.3rem;
-    display: block;
-    margin-bottom: 0.2rem;
-
-}
-
-.nav-icon::before {
-    content: ' ';
-    background-color: rgb(202, 60, 60);
-    width: 2rem;
-    height: 0.3rem;
-    margin-bottom: 0.2rem;
-    
-}
-
-.nav-icon::after {
-    content: ' ';
-    background-color: rgb(202, 60, 60);
-    width: 2rem;
-    height: 0.3rem;
-    margin-bottom: 0.2rem;
-
-    
-} */
-
-
 
 .nav-icon div {
   background-color: rgb(106, 71, 185);
@@ -336,13 +272,10 @@ a[data-tool-tip]:hover::after {
     transition: all .2s ease-in-out;
 }
 
-
-
 .nav-icon:hover:before {
     transform: translateY(12px) rotate(135deg);
     opacity: 0.7;
   }
-
 
 .nav-icon:hover:after {
     transform: translateY(-12px) rotate(-135deg);
@@ -352,7 +285,6 @@ a[data-tool-tip]:hover::after {
 .nav-icon:hover div {
     transform: scale(0);
 }
-
 
 .nav-icon-two {
     width: 2rem;
@@ -378,17 +310,13 @@ a[data-tool-tip]:hover::after {
 }
 
 .button-hovers{
-    min-height: 300px;
     padding: 1rem;
     width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: column;
-    align-items: center;
-    /* background-color: #333; */
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(4,1fr);
+    place-items: center;
 }
-
 
 .btn {
     width: 10rem;
@@ -401,7 +329,6 @@ a[data-tool-tip]:hover::after {
     position: relative;
     cursor: pointer;
    
-
     --background-color: #e3e3e3;
     --background-color-sec: rgb(37, 54, 153);
     --border-size:2px;
@@ -415,11 +342,9 @@ a[data-tool-tip]:hover::after {
     left: 0;
     bottom: 0;
     right: 0 ;
-    /* background-color: rgb(43, 129, 163); */
     border: var(--border-size ) solid var(--background-color-sec);
     z-index: -1;
     transition: all ease-in-out 100ms;
-    
 }
 
 .btn.btn-border-pop:hover::before,
@@ -498,7 +423,6 @@ a[data-tool-tip]:hover::after {
 .btn.btn-border-underline::after {
     content: '';
     position: absolute;
-    /* background-color: aquamarine; */
     top: 0;
     left: 0;
     bottom: 0;
@@ -529,7 +453,6 @@ a[data-tool-tip]:hover::after {
     transform: scaleY(0);
     transform-origin:bottom;
     transition: transform 250ms ease-in-out;
-
 }
 
 .btn.btn-background-flow:hover,
@@ -566,7 +489,6 @@ a[data-tool-tip]:hover::after {
 .btn.btn-background-corner:hover::after{
     transform: scale(1);
     transform-origin: top right;
-    /* overflow: hidden; */
 }
 
 .content--card--new {   
@@ -576,12 +498,16 @@ a[data-tool-tip]:hover::after {
     border-radius: 15px;
 }
    
-
 .card__new {
-    /* border: 1px solid #fff; */
     padding: .5rem;
     position: relative;
     z-index: 1;
+    text-align: left;
+}
+
+.card__new__two {
+    padding: .5rem;
+    text-align: left;
 }
 
 .card__new::before {
@@ -622,3 +548,60 @@ a[data-tool-tip]:hover::after {
 .card__new:hover::after {
     transform: scaleY(1);
 }
+
+.card__new__two__title{
+    z-index: 1;
+    position: relative;
+    display: inline-block;
+}
+
+.card__new__two__title::before {
+    content: '';
+    position: absolute;
+    background-color: rgb(189, 182, 233);
+    top: 0;
+    left: -.5rem;
+    bottom: 0;
+    width: calc(100% + 1rem);
+    z-index: -1;
+    transform: scaleX(0.05);
+    transform-origin: left;
+    transition: transform ease-in .25s;
+}
+
+.card__new__two:hover .card__new__two__title::before {
+    transform: scaleX(1);
+}
+
+.card__new__two__body {
+    position: relative;
+    margin-top: 0;
+    padding: 1rem .5rem;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity ease-in .25s;
+
+}
+
+.card__new__two__body::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    left: -.5rem;
+    background-color: rgb(236, 250, 187);
+    z-index: -1;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform ease-in .25s;
+}
+
+.card__new__two:hover .card__new__two__body {
+    opacity: 1;
+}
+
+.card__new__two:hover .card__new__two__body::after {
+    transform: scaleY(1);
+} 
+
