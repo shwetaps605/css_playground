@@ -528,7 +528,7 @@ a[data-tool-tip]:hover::after {
     width: 100%;
     transform: scaleY(0);
     transform-origin:bottom;
-    transition: all 250ms ease-in-out;
+    transition: transform 250ms ease-in-out;
 
 }
 
@@ -539,8 +539,32 @@ a[data-tool-tip]:hover::after {
 
 .btn.btn-background-flow:hover::after{
     transform: scaleY(1);
-    /* transform-origin: top; */
+    transform-origin: top;
 }
 
 /* Advanced Hover Effects - Kevin Powell */
 
+.btn.btn-background-corner{
+    z-index: 1;
+}
+
+.btn.btn-background-corner::after {
+    content: '';
+    position: absolute;
+    background-color: salmon;
+    inset: 0;
+    z-index: -1;
+    transform: scale(0);
+    transform-origin: bottom left;
+    transition: transform 500ms ease-in-out;
+}
+
+.btn.btn-background-corner{
+    border-radius: 5px;
+}
+
+.btn.btn-background-corner:hover::after{
+    transform: scale(1);
+    transform-origin: top right;
+    /* overflow: hidden; */
+}
